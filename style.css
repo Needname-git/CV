@@ -1,0 +1,198 @@
+/* reset page */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #03181d;
+    color: white;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* animation d'entrée sur le texte*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* box du haut */
+.top-box {
+    margin-bottom: 20px;
+    text-align: center;
+    animation: fadeIn 1s ease forwards;
+}
+
+.about-box {
+    background-color: #04292f;
+    padding: 30px;
+    border-radius: 10px;
+    animation: fadeIn 1s ease forwards;
+}
+
+.name-box h1 {
+    font-size: 44px;
+    font-weight: 700;
+    color: #00cec9;
+    animation: fadeIn 1s ease forwards;
+}
+
+/* grille box */
+.grid-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 10px;
+}
+
+/* contenu */
+.info-box {
+    background-color: #04292f;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s;
+    animation: fadeIn 0.8s ease forwards;
+    position: relative;
+}
+
+.info-box:hover {
+    box-shadow: 0 12px 25px rgba(0, 255, 200, 0.3);
+}
+
+.info-box h2 {
+    font-size: 20px;
+    color: #00b894;
+    margin-bottom: 10px;
+    animation: fadeIn 0.9s ease;
+}
+
+.info-box p {
+    animation: fadeIn 1s ease;
+}
+
+/* icônes */
+.icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.icons i {
+    font-size: 42px;
+    color: #00b894;
+    transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
+    animation: fadeIn 1.1s ease;
+}
+
+.icons i:hover {
+    transform: scale(1.2);
+    color: #ffffff;
+    text-shadow: 0 0 8px #00ffc3;
+}
+
+/* link */
+a {
+    color: #00cec9;
+    text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 5px #00ffd5;
+}
+
+/* responsive */
+@media (max-width: 600px) {
+    .name-box h1 {
+        font-size: 32px;
+    }
+
+    .desc-box p {
+        font-size: 16px;
+    }
+
+    .icons i {
+        font-size: 32px;
+    }
+}
+
+/* animations */
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* animations unique */
+.info-box:nth-child(1) { animation: slideInLeft 0.8s ease forwards; }
+.info-box:nth-child(2) { animation: slideInRight 0.8s ease forwards; }
+.info-box:nth-child(3) { animation: slideInUp 0.8s ease forwards; }
+.info-box:nth-child(4) { animation: fadeIn 0.8s ease forwards; }
+.info-box:nth-child(5) { animation: slideInLeft 0.8s ease forwards; }
+.info-box:nth-child(6) { animation: slideInRight 0.8s ease forwards; }
+
+.labeled-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.icon-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.icon-wrap i {
+    font-size: 42px;
+    color: #00b894;
+    transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
+    animation: fadeIn 1.1s ease;
+}
+
+.icon-wrap span {
+    opacity: 0;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #ffffff;
+    transition: opacity 0.3s;
+}
+
+.icon-wrap:hover i {
+    transform: scale(1.2);
+    color: #ffffff;
+    text-shadow: 0 0 8px #00ffc3;
+}
+
+.icon-wrap:hover span {
+    opacity: 1;
+}
